@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nico — Portafolio & Proyectos</title>
+  <title>Mechastronic — Mecatrónica & Astronomía</title>
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,11 +11,12 @@
       theme: {
         extend: {
           colors: {
-            brandBg: '#FBF9F5',
-            brandCard: '#F3EFE6',
-            brandDark: '#191919',
-            brandAccent: '#D96B43',
-            brandMuted: '#66635B'
+            brandBg: '#0F172A',      /* Azul marino profundo (Slate 900) */
+            brandSurface: '#1E293B', /* Azul marino medio para tarjetas (Slate 800) */
+            brandCard: '#334155',    /* Azul contenedor (Slate 700) */
+            brandAccent: '#38BDF8',  /* Azul cian brillante / astronómico */
+            brandText: '#F8FAFC',    /* Blanco suave */
+            brandMuted: '#94A3B8'   /* Gris/Azul neutro para textos secundarios */
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -26,117 +27,131 @@
     }
   </script>
 </head>
-<body class="bg-brandBg text-brandDark font-sans antialiased">
+<body class="bg-brandBg text-brandText font-sans antialiased border-t-4 border-brandAccent">
 
   <!-- Navegación -->
-  <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center border-b border-stone-200">
-    <div class="font-serif text-xl font-bold tracking-tight">Mechatro-Nico</div>
+  <nav class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center border-b border-slate-800">
+    <div class="font-serif text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+      <span class="text-brandAccent">✦</span> Mechastronic
+    </div>
     <div class="flex items-center space-x-6 text-sm font-medium text-brandMuted">
-      <a href="#acerca" class="hover:text-brandDark transition">Sobre mí</a>
-      <a href="#proyectos" class="hover:text-brandDark transition">Proyectos</a>
-      <a href="#investigacion" class="hover:text-brandDark transition">Áreas de trabajo</a>
-      <a href="#contacto" class="px-4 py-2 bg-brandDark text-white rounded-lg hover:bg-stone-800 transition">Contacto</a>
+      <a href="#acerca" class="hover:text-brandAccent transition">Sobre mí</a>
+      <a href="#proyectos" class="hover:text-brandAccent transition">Áreas</a>
+      <a href="#trayectoria" class="hover:text-brandAccent transition">Trayectoria</a>
+      <a href="#contacto" class="px-4 py-2 bg-brandAccent text-slate-950 font-semibold rounded-lg hover:bg-sky-300 transition">Contacto</a>
     </div>
   </nav>
 
-  <!-- Hero Section (Estilo Claude) -->
+  <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-20 pb-16 text-center">
-    <span class="text-xs uppercase tracking-widest text-brandAccent font-semibold bg-orange-100 px-3 py-1 rounded-full">
-      Ingeniería & Física Aplicada
+    <span class="text-xs font-mono uppercase tracking-widest text-brandAccent bg-sky-950/80 border border-sky-800/50 px-3.5 py-1.5 rounded-full">
+      Mecatrónica aplicada a la Astronomía
     </span>
-    <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-6 leading-tight text-brandDark">
-      Sistemas de control, mecatrónica e instrumentación.
+    
+    <h1 class="font-serif text-4xl sm:text-6xl font-normal mt-6 leading-tight text-white">
+      Ingeniería de precisión y ciencias aplicadas.
     </h1>
+    
     <p class="text-lg sm:text-xl text-brandMuted mt-6 max-w-2xl mx-auto leading-relaxed">
-      Diseño de soluciones de ingeniería, modelado de sistemas dinámicos y análisis de datos enfocados en control automático y ciencias aplicadas.
+      Diseño de soluciones de ingeniería, modelado de sistemas dinámicos y análisis de datos enfocados en control automático y ciencias aplicadas, con aplicaciones avanzadas en astronomía e instrumentación.
     </p>
+
     <div class="mt-8 flex justify-center gap-4">
-      <a href="#proyectos" class="px-6 py-3 bg-brandAccent text-white font-medium rounded-lg shadow-sm hover:opacity-90 transition">
-        Ver Proyectos
+      <a href="#proyectos" class="px-6 py-3 bg-brandAccent text-slate-950 font-semibold rounded-lg shadow-lg shadow-sky-500/10 hover:opacity-90 transition">
+        Explorar Áreas
       </a>
-      <a href="#contacto" class="px-6 py-3 bg-brandCard text-brandDark font-medium rounded-lg hover:bg-stone-200 transition">
-        Ver Trayectoria
+      <a href="#trayectoria" class="px-6 py-3 bg-brandSurface text-brandText font-medium rounded-lg border border-slate-700 hover:bg-slate-700 transition">
+        Ver Trayectoria Academic
       </a>
     </div>
   </header>
 
-  <!-- Grid de Enfoques (Estilo Bento Grid) -->
+  <!-- Sección de Áreas Principales -->
   <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="font-serif text-2xl sm:text-3xl font-medium mb-8">Áreas principales</h2>
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10">
+      <div>
+        <h2 class="font-serif text-2xl sm:text-3xl font-medium text-white">Áreas Principales</h2>
+        <p class="text-brandMuted text-sm mt-1">Desarrollo tecnológico y prototipado mecatrónico</p>
+      </div>
+    </div>
     
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       
       <!-- Tarjeta 1 -->
-      <div class="bg-brandCard p-8 rounded-2xl flex flex-col justify-between">
+      <div class="bg-brandSurface p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono text-brandMuted">01 / CONTROL</span>
-          <h3 class="font-serif text-xl font-semibold mt-3">Sistemas de Control Automático</h3>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono text-brandAccent">01 / CONTROL & ASTRONOMÍA</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold mt-4 text-white">Montura Ecuatorial Motorizada</h3>
           <p class="text-brandMuted text-sm mt-3 leading-relaxed">
-            Modelado dinámico, simulación de respuestas temporales (PI/PID) y análisis en espacio de estados con MATLAB & Simulink.
+            Diseño e implementación de sistemas de seguimiento astronómico de alta precisión. Control de motores para compensar la rotación terrestre en astrofotografía y observación instrumental.
           </p>
         </div>
-        <div class="mt-6 pt-4 border-t border-stone-300 text-xs text-brandMuted font-mono">
-          MATLAB • Simulink • Control Teórico
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brandMuted font-mono">
+          Seguimiento Estelar • Control PID • Firmware
         </div>
       </div>
 
       <!-- Tarjeta 2 -->
-      <div class="bg-brandCard p-8 rounded-2xl flex flex-col justify-between">
+      <div class="bg-brandSurface p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono text-brandMuted">02 / DISEÑO</span>
-          <h3 class="font-serif text-xl font-semibold mt-3">Elementos de Máquinas & FEA</h3>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono text-brandAccent">02 / AUTOMATIZACIÓN</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold mt-4 text-white">Invernadero Automatizado</h3>
           <p class="text-brandMuted text-sm mt-3 leading-relaxed">
-            Cálculo y validación estructural de componentes mecatrónicos mediante análisis por elementos finitos.
+            Sistema de control de variables ambientales. Monitoreo en tiempo real de microclimas mediante redes de sensores, control de riego dinámico y regulación bioclimática.
           </p>
         </div>
-        <div class="mt-6 pt-4 border-t border-stone-300 text-xs text-brandMuted font-mono">
-          Autodesk Inventor • ANSYS • CAD/CAM
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brandMuted font-mono">
+          Sensores & Actuadores • Telemetría • Sistemas Bio
         </div>
       </div>
 
       <!-- Tarjeta 3 -->
-      <div class="bg-brandCard p-8 rounded-2xl flex flex-col justify-between">
+      <div class="bg-brandSurface p-8 rounded-2xl border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between">
         <div>
-          <span class="text-xs font-mono text-brandMuted">03 / GESTIÓN</span>
-          <h3 class="font-serif text-xl font-semibold mt-3">Dirección de Proyectos</h3>
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono text-brandAccent">03 / AEROESPACIAL</span>
+          </div>
+          <h3 class="font-serif text-xl font-semibold mt-4 text-white">Desarrollo CanSat</h3>
           <p class="text-brandMuted text-sm mt-3 leading-relaxed">
-            Planificación estratégica EPC, estimación de costos y gestión de proyectos de ingeniería compleja.
+            Diseño e integración de un satélite a escala en formato de lata. Captura de datos atmosféricos, transmisión telemétrica en tiempo real y recuperación mediante paracaídas.
           </p>
         </div>
-        <div class="mt-6 pt-4 border-t border-stone-300 text-xs text-brandMuted font-mono">
-          Project Management • LaTeX • EPC
+        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brandMuted font-mono">
+          Carga Útil • Radiocomunicación • Sistemas Embebidos
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Sección de Filosofía / Sobre Mí -->
-  <section id="acerca" class="bg-brandDark text-white py-20 mt-10">
-    <div class="max-w-4xl mx-auto px-6 text-center sm:text-left flex flex-col sm:flex-row gap-10 items-center">
-      <div class="sm:w-2/3">
-        <h2 class="font-serif text-3xl sm:text-4xl leading-tight">
-          Ingeniería rigurosa respaldada por fundamentos físicos.
+  <!-- Sección de Trayectoria Internacional / USM -->
+  <section id="trayectoria" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="bg-gradient-to-br from-brandSurface to-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+      <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-sky-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <div class="max-w-3xl">
+        <span class="text-xs font-mono text-brandAccent uppercase tracking-widest">Intercambio Internacional</span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-white mt-3 leading-tight">
+          Formación en la Universidad Técnica Federico Santa María (USM)
         </h2>
-        <p class="text-stone-400 mt-4 leading-relaxed">
-          Combino el rigor analítico de la física con el enfoque práctico de la ingeniería mecatrónica para abordar problemas de instrumentación, control y automatización.
+        <p class="text-brandMuted mt-4 leading-relaxed">
+          Experiencia académica internacional realizada en Chile dentro de la <strong class="text-white font-medium">USM</strong>, referente y líder en América Latina en ingeniería eléctrica y electrónica. Fortalecimiento de competencias en control automático, sistemas dinámicos e ingeniería de proyectos.
         </p>
-      </div>
-      <div class="sm:w-1/3 flex justify-center">
-        <div class="w-32 h-32 rounded-full border-2 border-stone-600 bg-stone-800 flex items-center justify-center font-serif text-3xl font-bold">
-          MN
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Pie de página -->
-  <footer id="contacto" class="max-w-6xl mx-auto px-6 py-12 flex flex-col sm:flex-row justify-between items-center text-sm text-brandMuted">
-    <p>© 2026 Mechatro-Nico. Todos los derechos reservados.</p>
+  <footer id="contacto" class="max-w-6xl mx-auto px-6 py-12 flex flex-col sm:flex-row justify-between items-center text-sm text-brandMuted border-t border-slate-800">
+    <p>© 2026 Mechastronic. Todos los derechos reservados.</p>
     <div class="flex space-x-6 mt-4 sm:mt-0">
-      <a href="#" class="hover:text-brandDark transition">GitHub</a>
-      <a href="#" class="hover:text-brandDark transition">LinkedIn</a>
-      <a href="#" class="hover:text-brandDark transition">Correo</a>
+      <a href="#" class="hover:text-brandAccent transition">GitHub</a>
+      <a href="#" class="hover:text-brandAccent transition">LinkedIn</a>
+      <a href="#" class="hover:text-brandAccent transition">Contacto</a>
     </div>
   </footer>
 
